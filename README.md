@@ -3,7 +3,7 @@
 > The universal guide to AI models, providers, datasets, benchmarks, and infrastructure blueprints.  
 
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)  
-[![Stars](https://img.shields.io/github/stars/your-org/The-AI-Codex?style=social)](https://github.com/your-org/The-AI-Codex/stargazers)  
+[![Stars](https://img.shields.io/github/stars/raveendratal/The-AI-Codex?style=social)](https://github.com/raveendratal/The-AI-Codex/stargazers)  
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](#)  
 [![Contributions](https://img.shields.io/badge/contributions-welcome-blue)](CONTRIBUTING.md)  
 
