@@ -1,0 +1,435 @@
+{
+  "meta": {
+    "name": "databricks_dev_agent_prompts_v1",
+    "description": "Tool-augmented prompt catalog for Databricks agent frameworks (LangChain, LLMFlow, OpenAI Actions). Includes prompt text, intended tools, input/output schema, examples, and reference file path.",
+    "version": "2025-11-22",
+    "generated_by": "Assistant",
+    "source_file_url": "/mnt/data/Pyspark_Scenarios.pdf"
+  },
+  "prompts": [
+    {
+      "id": "pyspark_generate_etl_dlt",
+      "title": "Generate Lakeflow/DLT Pipeline from Spec",
+      "description": "Generate a Delta Live Tables (Lakeflow) pipeline (Python) given an ingestion spec. Returns pipeline code and a JSON manifest for pipeline creation.",
+      "prompt": "You are a Databricks engineer. Given the ingestion spec (source path, format, destination catalog.schema.table names, partition columns, expectations), generate a production-ready Delta Live Tables (Lakeflow) Python pipeline. Output two artifacts: (1) the full pipeline code as a string, (2) a JSON pipeline manifest containing pipeline name, target catalog/schema, required libraries, cluster spec, and environment variables.",
+      "tools_required": [
+        "code_formatter",
+        "uc_metadata_fetch",
+        "pipeline_manifest_writer",
+        "databricks_rest_submit"
+      ],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "spec": {
+            "type": "object",
+            "description": "Ingestion specification",
+            "properties": {
+              "source_path": {"type": "string"},
+              "format": {"type": "string", "enum": ["json","csv","parquet","avro"]},
+              "catalog": {"type": "string"},
+              "schema": {"type": "string"},
+              "table_prefix": {"type": "string"},
+              "partition_by": {"type": "array", "items": {"type": "string"}},
+              "expectations": {"type": "array", "items": {"type": "string"}}
+            },
+            "required": ["source_path","format","catalog","schema","table_prefix"]
+          },
+          "environment": {"type": "string", "enum": ["dev","qa","prod"]}
+        },
+        "required": ["spec"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "pipeline_code": {"type": "string"},
+          "pipeline_manifest": {"type": "object"}
+        },
+        "required": ["pipeline_code","pipeline_manifest"]
+      },
+      "examples": [
+        {
+          "input": {
+            "spec": {
+              "source_path": "/mnt/data/raw/payments",
+              "format": "csv",
+              "catalog": "retail",
+              "schema": "raw",
+              "table_prefix": "payments",
+              "partition_by": ["ingest_date"],
+              "expectations": ["non_null(transaction_id)","positive(amount)"]
+            },
+            "environment": "dev"
+          },
+          "note": "Returns a DLT pipeline code and manifest suitable for dev environment."
+        }
+      ],
+      "notes": "Use `uc_metadata_fetch` to validate target catalog/schema existence and to attach UC lineage metadata. For automated creation, call `databricks_rest_submit` with the manifest."
+    },
+    {
+      "id": "pyspark_optimize_join",
+      "title": "Optimize Large Join — Code Suggestion",
+      "description": "Given two large table identifiers and basic stats, suggest optimized PySpark code (broadcast or salting) and explain reasoning.",
+      "prompt": "You are a Databricks performance engineer. Input: left_table_id, right_table_id, left_rows, right_rows, join_keys[]. Propose an optimized PySpark implementation (complete code cell) including hints (broadcast, repartition, join type), estimated shuffle size, and an explanation. If one table < 1e6 rows, prefer broadcast; otherwise propose salting or bucketing.",
+      "tools_required": ["uc_table_stats", "code_formatter"],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "left_table_id": {"type": "string"},
+          "right_table_id": {"type": "string"},
+          "left_rows": {"type": "integer"},
+          "right_rows": {"type": "integer"},
+          "join_keys": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["left_table_id","right_table_id","join_keys"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "spark_code": {"type": "string"},
+          "explanation": {"type": "string"},
+          "recommendation": {"type": "string"}
+        },
+        "required": ["spark_code","explanation"]
+      },
+      "examples": [
+        {
+          "input": {"left_table_id":"retail.raw.orders","right_table_id":"retail.ref.products","left_rows":5000000,"right_rows":1200,"join_keys":["product_id"]},
+          "note": "Should propose broadcast join with code sample using broadcast()"
+        }
+      ]
+    },
+    {
+      "id": "generate_sql_from_nl",
+      "title": "Natural Language → SQL (UC-aware)",
+      "description": "Convert a natural-language analytics request to an optimized, UC-aware Spark SQL query with comments and suggested indexes/Z-order.",
+      "prompt": "You are a SQL engineer. Convert the user request (english) into a Databricks-optimized SQL query. Use fully-qualified Unity Catalog identifiers (catalog.schema.table). Add comments for partition pruning, suggested Z-ORDER columns, and estimated compute profile. If additional metadata is needed, call `uc_table_schema` tool.",
+      "tools_required": ["uc_table_schema","sql_formatter"],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "nl_query": {"type": "string"},
+          "target_catalog": {"type": "string"},
+          "target_schema": {"type": "string"}
+        },
+        "required": ["nl_query"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "sql": {"type": "string"},
+          "notes": {"type": "string"},
+          "zorder_suggestion": {"type": "array", "items": {"type": "string"}}
+        },
+        "required": ["sql"]
+      },
+      "examples": [
+        {
+          "input": {"nl_query":"Show monthly revenue by region for last 12 months where product category = 'Electronics'","target_catalog":"retail","target_schema":"analytics"},
+          "note":"Return SQL using `retail.analytics.sales_gold` or suggest table if not present."
+        }
+      ]
+    },
+    {
+      "id": "build_vector_index_and_ingest",
+      "title": "Create Vector Index & Ingest Documents",
+      "description": "Create a vector index in Unity Catalog from a document set, generate embeddings, store in Delta and index via Vector Search Delta Sync.",
+      "prompt": "You are an engineer building a RAG pipeline. Input: documents table or folder path + embedding_model (Mosaic or external). Steps: (1) chunk documents (specify chunk size & overlap), (2) call embedding model to generate embeddings (batch-friendly), (3) write embedding vectors and metadata to a Delta table under UC (catalog.schema.table), (4) create Vector Search index using Delta Sync. Return full Python code, index config, and monitoring suggestions.",
+      "tools_required": ["embedding_service","delta_writer","vector_index_api"],
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "source_path_or_table": {"type": "string"},
+          "catalog": {"type": "string"},
+          "schema": {"type": "string"},
+          "index_name": {"type": "string"},
+          "embedding_model": {"type": "string"},
+          "chunk_size": {"type":"integer","default":512},
+          "chunk_overlap": {"type":"integer","default":50}
+        },
+        "required": ["source_path_or_table","catalog","schema","index_name","embedding_model"]
+      },
+      "output_schema": {
+        "type": "object",
+        "properties": {
+          "ingest_code": {"type": "string"},
+          "index_config": {"type": "object"},
+          "delta_table": {"type": "string"}
+        },
+        "required": ["ingest_code","index_config"]
+      },
+      "examples": [
+        {
+          "input": {"source_path_or_table":"/mnt/data/docs","catalog":"retail","schema":"search","index_name":"product_docs_idx","embedding_model":"mosaic-text-embedding-1"},
+          "note":"Return chunking + batching + Delta write + index create code."
+        }
+      ]
+    },
+    {
+      "id": "deploy_model_serving_endpoint",
+      "title": "Generate Model Serving Deployment Manifest",
+      "description": "Produce a deployment manifest and invocation examples for Databricks Model Serving (serverless). Includes autoscale, concurrency, GPU selection, and payload schema.",
+      "prompt": "Generate a JSON/YAML manifest to deploy a model from Unity Catalog model registry to a serverless model serving endpoint. Include resource sizing, concurrency, warm-pool settings, input JSON schema, and a sample curl + Python invocation. Also output steps to add rate limiting and authentication.",
+      "tools_required": ["uc_model_fetch","serving_api"],
+      "input_schema": {
+        "type":"object",
+        "properties":{
+          "model_id": {"type":"string"},
+          "model_version": {"type":"string"},
+          "endpoint_name": {"type":"string"},
+          "gpu": {"type":"boolean","default":false},
+          "max_concurrency": {"type":"integer","default":10}
+        },
+        "required":["model_id","endpoint_name"]
+      },
+      "output_schema": {
+        "type":"object",
+        "properties":{
+          "manifest": {"type":"object"},
+          "invocation_examples": {"type":"object"}
+        },
+        "required":["manifest","invocation_examples"]
+      },
+      "examples":[
+        {
+          "input":{"model_id":"retail_models.recommendation::1","endpoint_name":"rec_endpoint","gpu":false,"max_concurrency":50},
+          "note":"Return manifest plus curl/python snippet"
+        }
+      ]
+    },
+    {
+      "id": "generate_feature_table_and_online_store",
+      "title": "Create Feature Table + Online Store Access Code",
+      "description": "Given feature definitions, generate code to create a Unity Catalog Feature Table (offline) and the online serving endpoint lookups, with hygiene checks and TTLs.",
+      "prompt": "Input: feature definitions (name, dtype, transformation SQL/PySpark, primary_key). Produce: (1) feature table creation SQL or PySpark, (2) online store ingestion code (Kafka/streaming or batch), (3) example retrieval code for model serving (Python). Include TTL, freshness SLA, and validation tests.",
+      "tools_required": ["feature_store_api","delta_writer","schema_validator"],
+      "input_schema": {
+        "type":"object",
+        "properties":{
+          "features": {
+            "type":"array",
+            "items":{"type":"object","properties":{"name":{"type":"string"},"dtype":{"type":"string"},"transform":{"type":"string"},"primary_key":{"type":"boolean"}}}
+          },
+          "catalog":{"type":"string"},
+          "schema":{"type":"string"}
+        },
+        "required":["features","catalog","schema"]
+      },
+      "output_schema": {
+        "type":"object",
+        "properties":{
+          "feature_table_sql": {"type":"string"},
+          "online_ingest_code": {"type":"string"},
+          "serving_lookup_example": {"type":"string"}
+        },
+        "required":["feature_table_sql","serving_lookup_example"]
+      }
+    },
+    {
+      "id": "diagnose_job_failure",
+      "title": "Diagnose Failed Job / Cluster Error",
+      "description": "Given a job run ID or error logs, propose root causes and a prioritized remediation plan including quick fixes and long-term fixes.",
+      "prompt": "You are a Databricks SRE. Input: job_run_id or error_log_text. Output: (1) parsed root cause summary, (2) immediate remediation steps (ordered), (3) longer-term fixes, (4) relevant commands or API calls to patch code/config. Use `databricks_job_api` to fetch run metadata if ID provided.",
+      "tools_required": ["databricks_job_api","logs_fetcher","cluster_stats"],
+      "input_schema": {
+        "type":"object",
+        "properties":{
+          "job_run_id":{"type":"string"},
+          "error_log_text":{"type":"string"}
+        },
+        "required": ["job_run_id"]
+      },
+      "output_schema": {
+        "type":"object",
+        "properties":{
+          "root_cause": {"type":"string"},
+          "immediate_steps": {"type":"array","items":{"type":"string"}},
+          "long_term_fixes": {"type":"array","items":{"type":"string"}}
+        },
+        "required":["root_cause","immediate_steps"]
+      }
+    },
+    {
+      "id": "create_agent_for_sql_tasks",
+      "title": "Create an AI Agent for SQL Diagnostics and Execution",
+      "description": "Define an agent that can introspect UC schemas, propose SQL, run read-only queries, and return results. Agent must obey least privilege.",
+      "prompt": "Design an agent manifest and tool interface for a SQL Diagnostics Agent. Tools: uc_schema_inspect, sql_runner_readonly, explanation_formatter, audit_log_writer. Provide sample system prompt, allowed actions, and a sample conversation where the agent discovers a slow query and suggests an index/Z-order.",
+      "tools_required": ["uc_schema_inspect","sql_runner_readonly","audit_log_writer"],
+      "input_schema": {
+        "type":"object",
+        "properties":{
+          "agent_name":{"type":"string"},
+          "allowed_catalogs":{"type":"array","items":{"type":"string"}}
+        },
+        "required":["agent_name"]
+      },
+      "output_schema": {
+        "type":"object",
+        "properties":{
+          "agent_manifest":{"type":"object"},
+          "example_conversation":{"type":"array"}
+        },
+        "required":["agent_manifest"]
+      }
+    },
+    {
+      "id": "generate_doc_from_notebook",
+      "title": "Auto-generate Documentation from Notebook(s)",
+      "description": "Given a notebook path or repo URL, extract code cells and docstrings, produce a human-readable developer doc with architecture diagram suggestions and TODOs.",
+      "prompt": "Input: notebook_path or repo_url. Use `notebook_fetcher` to pull content. Extract: headings, markdown, code examples, function signatures, and any magic commands. Output a structured markdown file with sections: Overview, Setup, Code Snippets, API, Testing, TODOs. Also include 'migration notes' if notebook uses legacy APIs.",
+      "tools_required": ["notebook_fetcher","code_analyzer","doc_writer"],
+      "input_schema": {
+        "type":"object",
+        "properties":{
+          "notebook_path":{"type":"string"},
+          "repo_url":{"type":"string"}
+        },
+        "required":["notebook_path"]
+      },
+      "output_schema": {
+        "type":"object",
+        "properties":{
+          "markdown_doc":{"type":"string"},
+          "suggested_diagrams":{"type":"array"}
+        },
+        "required":["markdown_doc"]
+      },
+      "examples":[
+        {
+          "input":{"notebook_path":"/Workspace/Repos/team/proj/etl_notebook.py"},
+          "note":"Return README-style tech doc suitable for repo root."
+        },
+        {
+          "input":{"notebook_path":"/mnt/data/Pyspark_Scenarios.pdf"},
+          "note":"If provided a PDF path reference (as uploaded), include it as a source reference and extract text if accessible via `notebook_fetcher`."
+        }
+      ]
+    },
+    {
+      "id": "evaluate_agent_behavior",
+      "title": "Agent Evaluation & Scoring",
+      "description": "Given agent transcripts and ground-truth, return scores for correctness, hallucination rate, latency, and cost, plus an overall rubric.",
+      "prompt": "Input: transcripts[], ground_truth[] (optional). Compute evaluation metrics: exact_match_rate, semantic_similarity (embedding-based), hallucination_rate, average_latency, token_cost_estimate. Provide a human-readable report and suggested remediation (prompt changes, tool limitations).",
+      "tools_required": ["embedding_service","transcript_fetcher","cost_estimator"],
+      "input_schema": {
+        "type":"object",
+        "properties":{
+          "transcripts":{"type":"array","items":{"type":"string"}},
+          "ground_truth":{"type":"array","items":{"type":"string"}},
+          "similarity_model":{"type":"string","default":"mosaic-text-embedding-1"}
+        },
+        "required":["transcripts"]
+      },
+      "output_schema": {
+        "type":"object",
+        "properties":{
+          "report_markdown":{"type":"string"},
+          "metrics":{"type":"object"}
+        },
+        "required":["report_markdown","metrics"]
+      }
+    },
+    {
+      "id": "search_prompts_catalog",
+      "title": "Search Prompt Catalog for Best Match",
+      "description": "Given a developer request, search the prompt catalog (this JSON) and return the top 5 prompt templates with modification suggestions.",
+      "prompt": "Input: developer_request (nl). Compute semantic similarity to stored prompts (embedding). Return top 5 with suggested edits to match the exact use-case, and example invocations (JSON inputs).",
+      "tools_required": ["embedding_service","vector_search_api","catalog_reader"],
+      "input_schema": {
+        "type":"object",
+        "properties":{
+          "developer_request":{"type":"string"},
+          "top_k":{"type":"integer","default":5}
+        },
+        "required":["developer_request"]
+      },
+      "output_schema": {
+        "type":"object",
+        "properties":{
+          "matches":{"type":"array","items":{"type":"object"}},
+          "suggested_modifications":{"type":"array"}
+        },
+        "required":["matches"]
+      }
+    }
+  ],
+  "tool_definitions": {
+    "uc_table_schema": {
+      "description": "Fetch Unity Catalog table schema and basic stats.",
+      "interface": {
+        "name": "uc_table_schema",
+        "params": {"table_identifier":"string"},
+        "returns": {"columns":"array","row_count":"integer","partition_columns":"array"}
+      }
+    },
+    "uc_metadata_fetch": {
+      "description": "Validate existence of catalog/schema/table, return lineage metadata.",
+      "interface": {"name":"uc_metadata_fetch","params":{"catalog":"string","schema":"string","table":"string"},"returns":{"exists":"boolean","owner":"string","tags":"object"}}
+    },
+    "databricks_rest_submit": {
+      "description": "Call Databricks REST API to create pipeline/job/endpoint.",
+      "interface": {"name":"databricks_rest_submit","params":{"endpoint":"string","payload":"object"},"returns":{"status":"string","id":"string"}}
+    },
+    "embedding_service": {
+      "description": "Generate embeddings using a configured embedding model (Mosaic or 3rd party).",
+      "interface": {"name":"embedding_service","params":{"model":"string","inputs":"array"},"returns":{"embeddings":"array"}}
+    },
+    "vector_index_api": {
+      "description": "Create and manage Vector Search indexes (Delta Sync or direct).",
+      "interface": {"name":"vector_index_api","params":{"index_name":"string","config":"object"},"returns":{"index_id":"string","status":"string"}}
+    },
+    "delta_writer": {
+      "description": "Write DataFrame to a Delta table under Unity Catalog with options.",
+      "interface": {"name":"delta_writer","params":{"catalog":"string","schema":"string","table":"string","mode":"string","df_reference":"object"},"returns":{"path":"string","status":"string"}}
+    },
+    "feature_store_api": {
+      "description": "Create feature tables and manage online store ingestion.",
+      "interface": {"name":"feature_store_api","params":{"action":"string","payload":"object"},"returns":{"status":"string","details":"object"}}
+    },
+    "serving_api": {
+      "description": "Deploy and manage Model Serving endpoints and return invocation URLs.",
+      "interface": {"name":"serving_api","params":{"manifest":"object"},"returns":{"endpoint_url":"string","status":"string"}}
+    },
+    "databricks_job_api": {
+      "description": "Fetch job run metadata and logs.",
+      "interface": {"name":"databricks_job_api","params":{"job_run_id":"string"},"returns":{"status":"string","logs":"string","cluster_id":"string"}}
+    },
+    "logs_fetcher": {
+      "description": "Fetch raw logs from DBFS/Cluster/Jobs for given identifiers.",
+      "interface": {"name":"logs_fetcher","params":{"path_or_run_id":"string"},"returns":{"log_text":"string"}}
+    },
+    "notebook_fetcher": {
+      "description": "Fetch notebook source (ipynb or repo path) and return structured cells.",
+      "interface": {"name":"notebook_fetcher","params":{"path":"string"},"returns":{"cells":"array","metadata":"object"}}
+    },
+    "code_formatter": {
+      "description": "Format and lint generated code (python/sql).",
+      "interface": {"name":"code_formatter","params":{"code":"string","language":"string"},"returns":{"formatted_code":"string"}}
+    },
+    "sql_runner_readonly": {
+      "description": "Execute read-only SQL queries with limited result size for agents.",
+      "interface": {"name":"sql_runner_readonly","params":{"sql":"string","limit":"integer"},"returns":{"rows":"array","schema":"object"}}
+    },
+    "audit_log_writer": {
+      "description": "Record agent actions to an audit log with metadata.",
+      "interface": {"name":"audit_log_writer","params":{"agent_id":"string","action":"string","details":"object"},"returns":{"status":"string"}}
+    },
+    "catalog_reader": {
+      "description": "Read the prompt catalog and return entries for search/analytics.",
+      "interface": {"name":"catalog_reader","params":{},"returns":{"prompts":"array"}}
+    },
+    "cost_estimator": {
+      "description": "Estimate token and compute cost given LLM call parameters and model.",
+      "interface": {"name":"cost_estimator","params":{"model":"string","tokens":"integer"},"returns":{"usd_estimate":"number"}}
+    },
+    "transcript_fetcher": {
+      "description": "Fetch agent transcripts for evaluation.",
+      "interface": {"name":"transcript_fetcher","params":{"transcript_id":"string"},"returns":{"transcript":"string"}}
+    }
+  },
+  "usage_notes": {
+    "agent_security": "All agents must run with least-privilege credentials. For any tool that can write (databricks_rest_submit, delta_writer, feature_store_api), require explicit user consent in the agent conversation and log all actions to `audit_log_writer`.",
+    "rate_limits": "When calling LLMs or embedding APIs, implement batching and exponential backoff. Provide token-cost estimates via `cost_estimator` before large runs.",
+    "file_reference": "The uploaded reference file is available at `/mnt/data/Pyspark_Scenarios.pdf`. Transform this local path to your workspace or cloud URL when providing the agent with the 'source_file_url'."
+  }
+}
