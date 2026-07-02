@@ -1,148 +1,210 @@
-Below is a curated list of **high-value official resources** that I recommend every **Data Engineer, AI Engineer, GenAI Engineer, Agentic AI Engineer, and Databricks Solution Architect** should bookmark.
+# AI Engineering Resource Hub
+ 
 
----
+------------------------------------------------------------------------
 
 # 🤖 LLM & Foundation Models
 
-| Resource                                                                                   | Purpose                                     |
-| ------------------------------------------------------------------------------------------ | ------------------------------------------- |
-| [OpenAI Platform](https://platform.openai.com?utm_source=chatgpt.com)                      | APIs, GPT models, embeddings, Responses API |
-| [OpenAI Documentation](https://platform.openai.com/docs?utm_source=chatgpt.com)            | Official API documentation                  |
-| [Anthropic Documentation](https://docs.anthropic.com?utm_source=chatgpt.com)               | Claude API documentation                    |
-| [Anthropic Console](https://console.anthropic.com?utm_source=chatgpt.com)                  | Claude API management                       |
-| [Google AI Studio](https://aistudio.google.com?utm_source=chatgpt.com)                     | Gemini playground                           |
-| [Google AI for Developers](https://ai.google.dev?utm_source=chatgpt.com)                   | Gemini APIs                                 |
-| [Azure AI Foundry](https://ai.azure.com?utm_source=chatgpt.com)                            | Azure AI platform                           |
-| [Amazon Bedrock Documentation](https://docs.aws.amazon.com/bedrock?utm_source=chatgpt.com) | Foundation models on AWS                    |
-| [Mistral AI](https://docs.mistral.ai?utm_source=chatgpt.com)                               | Mistral models                              |
-| [Cohere Documentation](https://docs.cohere.com?utm_source=chatgpt.com)                     | Embeddings, reranking, LLMs                 |
+  ------------------------------------------------------------------------------------------------------------------------------------------
+  Resource                                                                                               Purpose
+  ------------------------------------------------------------------------------------------------------ -----------------------------------
+  `<a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer">`{=html}OpenAI        APIs, GPT models
+  Platform`</a>`{=html}                                                                                  
 
----
+  `<a href="https://platform.openai.com/docs" target="_blank" rel="noopener noreferrer">`{=html}OpenAI   Official documentation
+  Docs`</a>`{=html}                                                                                      
 
-# 🧠 Open Source LLMs
+  `<a href="https://cookbook.openai.com" target="_blank" rel="noopener noreferrer">`{=html}OpenAI        Examples
+  Cookbook`</a>`{=html}                                                                                  
 
-| Resource                                                                | Purpose                    |
-| ----------------------------------------------------------------------- | -------------------------- |
-| [Hugging Face](https://huggingface.co?utm_source=chatgpt.com)           | Models, datasets, spaces   |
-| [Hugging Face Docs](https://huggingface.co/docs?utm_source=chatgpt.com) | Transformers documentation |
-| [Meta Llama](https://www.llama.com?utm_source=chatgpt.com)              | Llama models               |
-| [Ollama](https://ollama.com?utm_source=chatgpt.com)                     | Local LLM inference        |
-| [vLLM](https://docs.vllm.ai?utm_source=chatgpt.com)                     | High-performance inference |
-| [LM Studio](https://lmstudio.ai?utm_source=chatgpt.com)                 | Desktop LLM runtime        |
+  `<a href="https://openai.com/api/pricing" target="_blank" rel="noopener noreferrer">`{=html}OpenAI     Pricing
+  Pricing`</a>`{=html}                                                                                   
 
----
+  `<a href="https://docs.anthropic.com" target="_blank" rel="noopener noreferrer">`{=html}Anthropic      Claude APIs
+  Docs`</a>`{=html}                                                                                      
 
-# 📚 Databricks Learning
+  `<a href="https://console.anthropic.com" target="_blank" rel="noopener noreferrer">`{=html}Anthropic   Claude Console
+  Console`</a>`{=html}                                                                                   
 
-| Resource                                                                                  | Purpose                |
-| ----------------------------------------------------------------------------------------- | ---------------------- |
-| [Databricks Documentation](https://docs.databricks.com?utm_source=chatgpt.com)            | Complete documentation |
-| [Databricks Academy](https://academy.databricks.com?utm_source=chatgpt.com)               | Official training      |
-| [Databricks Learning Catalog](https://www.databricks.com/learn?utm_source=chatgpt.com)    | Learning paths         |
-| [Databricks Blog](https://www.databricks.com/blog?utm_source=chatgpt.com)                 | Latest features        |
-| [Delta Lake Documentation](https://docs.delta.io?utm_source=chatgpt.com)                  | Delta Lake             |
-| [MLflow Documentation](https://mlflow.org/docs/latest/index.html?utm_source=chatgpt.com)  | ML lifecycle           |
-| [Apache Spark Documentation](https://spark.apache.org/docs/latest?utm_source=chatgpt.com) | Spark reference        |
+  `<a href="https://ai.google.dev" target="_blank" rel="noopener noreferrer">`{=html}Google AI           Gemini APIs
+  Developers`</a>`{=html}                                                                                
 
----
+  `<a href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">`{=html}Google AI     Playground
+  Studio`</a>`{=html}                                                                                    
 
-# 🤖 AI Agents & Agentic AI
+  `<a href="https://docs.mistral.ai" target="_blank" rel="noopener noreferrer">`{=html}Mistral           Models
+  AI`</a>`{=html}                                                                                        
 
-| Resource                                                                                         | Purpose                       |
-| ------------------------------------------------------------------------------------------------ | ----------------------------- |
-| [LangChain Documentation](https://python.langchain.com/docs/introduction?utm_source=chatgpt.com) | Agent framework               |
-| [LangGraph Documentation](https://langchain-ai.github.io/langgraph?utm_source=chatgpt.com)       | Stateful agent workflows      |
-| [LlamaIndex Documentation](https://docs.llamaindex.ai?utm_source=chatgpt.com)                    | RAG framework                 |
-| [CrewAI Documentation](https://docs.crewai.com?utm_source=chatgpt.com)                           | Multi-agent orchestration     |
-| [AutoGen Documentation](https://microsoft.github.io/autogen/stable?utm_source=chatgpt.com)       | Multi-agent conversations     |
-| [OpenAI Agents SDK Docs](https://openai.github.io/openai-agents-python?utm_source=chatgpt.com)   | Agent development with OpenAI |
-| [Pydantic AI Documentation](https://ai.pydantic.dev?utm_source=chatgpt.com)                      | Type-safe AI agents           |
+  `<a href="https://docs.cohere.com" target="_blank" rel="noopener noreferrer">`{=html}Cohere            Embeddings
+  Docs`</a>`{=html}                                                                                      
+  ------------------------------------------------------------------------------------------------------------------------------------------
 
----
+------------------------------------------------------------------------
 
-# 🔍 Vector Databases
+# 🧠 Tokenizers & Token Calculators
 
-| Resource                                                                                 | Purpose                 |
-| ---------------------------------------------------------------------------------------- | ----------------------- |
-| [Pinecone Documentation](https://docs.pinecone.io?utm_source=chatgpt.com)                | Managed vector database |
-| [Weaviate Documentation](https://weaviate.io/developers/weaviate?utm_source=chatgpt.com) | Vector search           |
-| [Milvus Documentation](https://milvus.io/docs?utm_source=chatgpt.com)                    | Open-source vector DB   |
-| [Qdrant Documentation](https://qdrant.tech/documentation?utm_source=chatgpt.com)         | Vector search engine    |
-| [Chroma Documentation](https://docs.trychroma.com?utm_source=chatgpt.com)                | Local vector database   |
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Resource                                                                                                                                  Purpose
+  ----------------------------------------------------------------------------------------------------------------------------------------- -----------------------------------
+  `<a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener noreferrer">`{=html}OpenAI Tokenizer`</a>`{=html}          Count GPT tokens
 
----
+  `<a href="https://huggingface.co/docs/tokenizers" target="_blank" rel="noopener noreferrer">`{=html}Hugging Face Tokenizers`</a>`{=html}  Tokenizer library
 
-# 📄 RAG & Search
+  `<a href="https://huggingface.co/spaces/Xenova/the-tokenizer-playground" target="_blank" rel="noopener noreferrer">`{=html}HF Tokenizer   Interactive tokenizer
+  Playground`</a>`{=html}                                                                                                                   
 
-| Resource                                                                                         | Purpose                |
-| ------------------------------------------------------------------------------------------------ | ---------------------- |
-| [OpenAI Cookbook](https://cookbook.openai.com?utm_source=chatgpt.com)                            | Practical RAG examples |
-| [Azure AI Search Documentation](https://learn.microsoft.com/azure/search?utm_source=chatgpt.com) | Enterprise search      |
-| [Elasticsearch Documentation](https://www.elastic.co/guide/index.html?utm_source=chatgpt.com)    | Hybrid search          |
+  `<a href="https://docs.anthropic.com/en/docs/build-with-claude/token-counting" target="_blank" rel="noopener noreferrer">`{=html}Claude   Claude tokens
+  Token Counting`</a>`{=html}                                                                                                               
 
----
+  `<a href="https://ai.google.dev/gemini-api/docs/tokens" target="_blank" rel="noopener noreferrer">`{=html}Gemini Token                    Gemini tokens
+  Counting`</a>`{=html}                                                                                                                     
+  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# ☁️ Cloud AI Platforms
+------------------------------------------------------------------------
 
-| Resource                                                                                                  | Purpose             |
-| --------------------------------------------------------------------------------------------------------- | ------------------- |
-| [Google Cloud Vertex AI](https://cloud.google.com/vertex-ai?utm_source=chatgpt.com)                       | Managed AI platform |
-| [Azure AI Documentation](https://learn.microsoft.com/azure/ai-services?utm_source=chatgpt.com)            | Azure AI services   |
-| [AWS Machine Learning Documentation](https://docs.aws.amazon.com/machine-learning?utm_source=chatgpt.com) | AWS AI/ML services  |
+# 📚 Datasets
 
----
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Resource                                                                                                                         Purpose
+  -------------------------------------------------------------------------------------------------------------------------------- -----------------------------------
+  `<a href="https://www.kaggle.com/datasets" target="_blank" rel="noopener noreferrer">`{=html}Kaggle Datasets`</a>`{=html}        ML datasets
 
-# 🧩 MCP (Model Context Protocol)
+  `<a href="https://www.kaggle.com/search?q=airline+data+in%3Adatasets" target="_blank" rel="noopener noreferrer">`{=html}Kaggle   Airline datasets
+  Airline Datasets`</a>`{=html}                                                                                                    
 
-| Resource                                                                                  | Purpose                            |
-| ----------------------------------------------------------------------------------------- | ---------------------------------- |
-| [Model Context Protocol](https://modelcontextprotocol.io?utm_source=chatgpt.com)          | MCP specification                  |
-| [MCP GitHub Organization](https://github.com/modelcontextprotocol?utm_source=chatgpt.com) | SDKs and reference implementations |
+  `<a href="https://huggingface.co/datasets" target="_blank" rel="noopener noreferrer">`{=html}HF Datasets`</a>`{=html}            NLP datasets
 
----
+  `<a href="https://datasetsearch.research.google.com" target="_blank" rel="noopener noreferrer">`{=html}Google Dataset            Dataset search
+  Search`</a>`{=html}                                                                                                              
 
-# 💻 AI Coding Assistants
+  `<a href="https://archive.ics.uci.edu" target="_blank" rel="noopener noreferrer">`{=html}UCI Repository`</a>`{=html}             Academic datasets
 
-| Resource                                                                           | Purpose                      |
-| ---------------------------------------------------------------------------------- | ---------------------------- |
-| [GitHub Copilot Docs](https://docs.github.com/copilot?utm_source=chatgpt.com)      | AI coding assistant          |
-| [Cursor Documentation](https://docs.cursor.com?utm_source=chatgpt.com)             | AI IDE                       |
-| [Windsurf Documentation](https://docs.codeium.com/windsurf?utm_source=chatgpt.com) | AI editor                    |
-| [Continue Documentation](https://docs.continue.dev?utm_source=chatgpt.com)         | Open-source coding assistant |
+  `<a href="https://registry.opendata.aws" target="_blank" rel="noopener noreferrer">`{=html}AWS Open Data`</a>`{=html}            Public datasets
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
----
+------------------------------------------------------------------------
 
-# 📊 AI Evaluation & Observability
+# 🎮 Deep Learning Visualization
 
-| Resource                                                                                 | Purpose                       |
-| ---------------------------------------------------------------------------------------- | ----------------------------- |
-| [LangSmith Documentation](https://docs.smith.langchain.com?utm_source=chatgpt.com)       | Tracing and evaluation        |
-| [Arize Phoenix Documentation](https://arize.com/docs/phoenix?utm_source=chatgpt.com)     | LLM observability             |
-| [Weights & Biases Documentation](https://docs.wandb.ai?utm_source=chatgpt.com)           | Experiment tracking           |
-| [MLflow Documentation](https://mlflow.org/docs/latest/index.html?utm_source=chatgpt.com) | Model tracking and evaluation |
+  -----------------------------------------------------------------------------------------------------------------------------------------------------
+  Resource                                                                                                          Purpose
+  ----------------------------------------------------------------------------------------------------------------- -----------------------------------
+  `<a href="https://playground.tensorflow.org" target="_blank" rel="noopener noreferrer">`{=html}TensorFlow         NN visualization
+  Playground`</a>`{=html}                                                                                           
 
----
+  `<a href="https://transformer.sujayk.me" target="_blank" rel="noopener noreferrer">`{=html}Transformer            Transformer visualization
+  Explorer`</a>`{=html}                                                                                             
 
-# 📰 AI News & Research
+  `<a href="https://transformer-circuits.pub" target="_blank" rel="noopener noreferrer">`{=html}Transformer         Interpretability
+  Circuits`</a>`{=html}                                                                                             
 
-| Resource                                                                      | Purpose                    |
-| ----------------------------------------------------------------------------- | -------------------------- |
-| [Papers with Code](https://paperswithcode.com?utm_source=chatgpt.com)         | Research + implementations |
-| [arXiv AI Papers](https://arxiv.org/list/cs.AI/recent?utm_source=chatgpt.com) | Latest AI research         |
-| [Google AI Blog](https://blog.google/technology/ai?utm_source=chatgpt.com)    | Google AI announcements    |
-| [OpenAI News](https://openai.com/news?utm_source=chatgpt.com)                 | OpenAI updates             |
-| [Anthropic News](https://www.anthropic.com/news?utm_source=chatgpt.com)       | Claude updates             |
+  `<a href="https://projector.tensorflow.org" target="_blank" rel="noopener noreferrer">`{=html}Embedding           Embeddings
+  Projector`</a>`{=html}                                                                                            
 
-## Suggested learning path
+  `<a href="https://bertviz.neuralmind.ai" target="_blank" rel="noopener noreferrer">`{=html}BertViz`</a>`{=html}   Attention visualization
 
-For someone pursuing roles in Databricks AI Engineering and AI Solution Architecture, a practical progression is:
+  `<a href="https://distill.pub" target="_blank" rel="noopener noreferrer">`{=html}Distill`</a>`{=html}             DL articles
+  -----------------------------------------------------------------------------------------------------------------------------------------------------
 
-1. Apache Spark → Delta Lake → Unity Catalog
-2. Databricks Workflows → MLflow → Model Serving
-3. Python → LLM APIs → Prompt Engineering
-4. RAG → Vector Databases → Embeddings
-5. LangChain → LangGraph → OpenAI Agents SDK → MCP
-6. Agentic AI → Multi-Agent Systems → Evaluation & Observability
-7. AI Governance → Security → Production Deployment → Performance Optimization
+------------------------------------------------------------------------
 
-This collection covers the core documentation and learning resources used by many enterprise AI and data engineering teams.
+# 🤖 AI Agents
+
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Resource                                                                                                                             Purpose
+  ------------------------------------------------------------------------------------------------------------------------------------ -----------------------------------
+  `<a href="https://openai.github.io/openai-agents-python" target="_blank" rel="noopener noreferrer">`{=html}OpenAI Agents             Agents
+  SDK`</a>`{=html}                                                                                                                     
+
+  `<a href="https://langchain-ai.github.io/langgraph" target="_blank" rel="noopener noreferrer">`{=html}LangGraph`</a>`{=html}         Agent workflows
+
+  `<a href="https://python.langchain.com/docs/introduction" target="_blank" rel="noopener noreferrer">`{=html}LangChain`</a>`{=html}   LLM framework
+
+  `<a href="https://docs.crewai.com" target="_blank" rel="noopener noreferrer">`{=html}CrewAI`</a>`{=html}                             Multi-agent
+
+  `<a href="https://microsoft.github.io/autogen/stable" target="_blank" rel="noopener noreferrer">`{=html}AutoGen`</a>`{=html}         Multi-agent
+
+  `<a href="https://ai.pydantic.dev" target="_blank" rel="noopener noreferrer">`{=html}PydanticAI`</a>`{=html}                         Typed agents
+
+  `<a href="https://learn.microsoft.com/semantic-kernel" target="_blank" rel="noopener noreferrer">`{=html}Semantic                    Microsoft orchestration
+  Kernel`</a>`{=html}                                                                                                                  
+
+  `<a href="https://docs.agno.com" target="_blank" rel="noopener noreferrer">`{=html}Agno`</a>`{=html}                                 Agent framework
+  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+# 📚 Databricks
+
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+  Resource                                                                                                                     Purpose
+  ---------------------------------------------------------------------------------------------------------------------------- -----------------------------------
+  `<a href="https://docs.databricks.com" target="_blank" rel="noopener noreferrer">`{=html}Databricks Docs`</a>`{=html}        Documentation
+
+  `<a href="https://academy.databricks.com" target="_blank" rel="noopener noreferrer">`{=html}Databricks Academy`</a>`{=html}  Training
+
+  `<a href="https://www.databricks.com/learn" target="_blank" rel="noopener noreferrer">`{=html}Learning Catalog`</a>`{=html}  Courses
+
+  `<a href="https://www.databricks.com/blog" target="_blank" rel="noopener noreferrer">`{=html}Databricks Blog`</a>`{=html}    News
+
+  `<a href="https://docs.delta.io" target="_blank" rel="noopener noreferrer">`{=html}Delta Lake`</a>`{=html}                   Delta
+
+  `<a href="https://mlflow.org/docs/latest/index.html" target="_blank" rel="noopener noreferrer">`{=html}MLflow`</a>`{=html}   ML lifecycle
+
+  `<a href="https://spark.apache.org/docs/latest" target="_blank" rel="noopener noreferrer">`{=html}Apache Spark`</a>`{=html}  Spark docs
+  ----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+# 🔎 Vector Databases
+
+Pinecone, Qdrant, Weaviate, Milvus, Chroma, LanceDB, FAISS: -
+https://docs.pinecone.io - https://qdrant.tech/documentation -
+https://weaviate.io/developers/weaviate - https://milvus.io/docs -
+https://docs.trychroma.com - https://lancedb.github.io/lancedb/ -
+https://github.com/facebookresearch/faiss
+
+------------------------------------------------------------------------
+
+# 📊 Evaluation
+
+-   LangSmith
+-   DeepEval
+-   Ragas
+-   Arize Phoenix
+-   MLflow Evaluation
+-   Weights & Biases
+
+------------------------------------------------------------------------
+
+# ☁️ Cloud AI
+
+-   Azure AI Foundry
+-   Google Vertex AI
+-   Amazon Bedrock
+
+------------------------------------------------------------------------
+
+# MCP
+
+-   https://modelcontextprotocol.io
+-   https://github.com/modelcontextprotocol
+
+------------------------------------------------------------------------
+
+# AI Coding
+
+-   Cursor
+-   Windsurf
+-   GitHub Copilot
+-   Continue.dev
+
+------------------------------------------------------------------------
+
+# Research
+
+-   Papers with Code
+-   arXiv
+-   OpenAI News
+-   Anthropic News
+-   Google AI Blog
