@@ -1,210 +1,92 @@
-# AI Engineering Resource Hub
- 
-
-------------------------------------------------------------------------
-
-# 🤖 LLM & Foundation Models
-
-  ------------------------------------------------------------------------------------------------------------------------------------------
-  Resource                                                                                               Purpose
-  ------------------------------------------------------------------------------------------------------ -----------------------------------
-  `<a href="https://platform.openai.com" target="_blank" rel="noopener noreferrer">`{=html}OpenAI        APIs, GPT models
-  Platform`</a>`{=html}                                                                                  
-
-  `<a href="https://platform.openai.com/docs" target="_blank" rel="noopener noreferrer">`{=html}OpenAI   Official documentation
-  Docs`</a>`{=html}                                                                                      
-
-  `<a href="https://cookbook.openai.com" target="_blank" rel="noopener noreferrer">`{=html}OpenAI        Examples
-  Cookbook`</a>`{=html}                                                                                  
-
-  `<a href="https://openai.com/api/pricing" target="_blank" rel="noopener noreferrer">`{=html}OpenAI     Pricing
-  Pricing`</a>`{=html}                                                                                   
-
-  `<a href="https://docs.anthropic.com" target="_blank" rel="noopener noreferrer">`{=html}Anthropic      Claude APIs
-  Docs`</a>`{=html}                                                                                      
-
-  `<a href="https://console.anthropic.com" target="_blank" rel="noopener noreferrer">`{=html}Anthropic   Claude Console
-  Console`</a>`{=html}                                                                                   
-
-  `<a href="https://ai.google.dev" target="_blank" rel="noopener noreferrer">`{=html}Google AI           Gemini APIs
-  Developers`</a>`{=html}                                                                                
-
-  `<a href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">`{=html}Google AI     Playground
-  Studio`</a>`{=html}                                                                                    
-
-  `<a href="https://docs.mistral.ai" target="_blank" rel="noopener noreferrer">`{=html}Mistral           Models
-  AI`</a>`{=html}                                                                                        
-
-  `<a href="https://docs.cohere.com" target="_blank" rel="noopener noreferrer">`{=html}Cohere            Embeddings
-  Docs`</a>`{=html}                                                                                      
-  ------------------------------------------------------------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-# 🧠 Tokenizers & Token Calculators
-
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Resource                                                                                                                                  Purpose
-  ----------------------------------------------------------------------------------------------------------------------------------------- -----------------------------------
-  `<a href="https://platform.openai.com/tokenizer" target="_blank" rel="noopener noreferrer">`{=html}OpenAI Tokenizer`</a>`{=html}          Count GPT tokens
-
-  `<a href="https://huggingface.co/docs/tokenizers" target="_blank" rel="noopener noreferrer">`{=html}Hugging Face Tokenizers`</a>`{=html}  Tokenizer library
-
-  `<a href="https://huggingface.co/spaces/Xenova/the-tokenizer-playground" target="_blank" rel="noopener noreferrer">`{=html}HF Tokenizer   Interactive tokenizer
-  Playground`</a>`{=html}                                                                                                                   
-
-  `<a href="https://docs.anthropic.com/en/docs/build-with-claude/token-counting" target="_blank" rel="noopener noreferrer">`{=html}Claude   Claude tokens
-  Token Counting`</a>`{=html}                                                                                                               
-
-  `<a href="https://ai.google.dev/gemini-api/docs/tokens" target="_blank" rel="noopener noreferrer">`{=html}Gemini Token                    Gemini tokens
-  Counting`</a>`{=html}                                                                                                                     
-  -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-# 📚 Datasets
-
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Resource                                                                                                                         Purpose
-  -------------------------------------------------------------------------------------------------------------------------------- -----------------------------------
-  `<a href="https://www.kaggle.com/datasets" target="_blank" rel="noopener noreferrer">`{=html}Kaggle Datasets`</a>`{=html}        ML datasets
-
-  `<a href="https://www.kaggle.com/search?q=airline+data+in%3Adatasets" target="_blank" rel="noopener noreferrer">`{=html}Kaggle   Airline datasets
-  Airline Datasets`</a>`{=html}                                                                                                    
-
-  `<a href="https://huggingface.co/datasets" target="_blank" rel="noopener noreferrer">`{=html}HF Datasets`</a>`{=html}            NLP datasets
-
-  `<a href="https://datasetsearch.research.google.com" target="_blank" rel="noopener noreferrer">`{=html}Google Dataset            Dataset search
-  Search`</a>`{=html}                                                                                                              
-
-  `<a href="https://archive.ics.uci.edu" target="_blank" rel="noopener noreferrer">`{=html}UCI Repository`</a>`{=html}             Academic datasets
-
-  `<a href="https://registry.opendata.aws" target="_blank" rel="noopener noreferrer">`{=html}AWS Open Data`</a>`{=html}            Public datasets
-  --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-# 🎮 Deep Learning Visualization
-
-  -----------------------------------------------------------------------------------------------------------------------------------------------------
-  Resource                                                                                                          Purpose
-  ----------------------------------------------------------------------------------------------------------------- -----------------------------------
-  `<a href="https://playground.tensorflow.org" target="_blank" rel="noopener noreferrer">`{=html}TensorFlow         NN visualization
-  Playground`</a>`{=html}                                                                                           
-
-  `<a href="https://transformer.sujayk.me" target="_blank" rel="noopener noreferrer">`{=html}Transformer            Transformer visualization
-  Explorer`</a>`{=html}                                                                                             
-
-  `<a href="https://transformer-circuits.pub" target="_blank" rel="noopener noreferrer">`{=html}Transformer         Interpretability
-  Circuits`</a>`{=html}                                                                                             
-
-  `<a href="https://projector.tensorflow.org" target="_blank" rel="noopener noreferrer">`{=html}Embedding           Embeddings
-  Projector`</a>`{=html}                                                                                            
-
-  `<a href="https://bertviz.neuralmind.ai" target="_blank" rel="noopener noreferrer">`{=html}BertViz`</a>`{=html}   Attention visualization
-
-  `<a href="https://distill.pub" target="_blank" rel="noopener noreferrer">`{=html}Distill`</a>`{=html}             DL articles
-  -----------------------------------------------------------------------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-# 🤖 AI Agents
-
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Resource                                                                                                                             Purpose
-  ------------------------------------------------------------------------------------------------------------------------------------ -----------------------------------
-  `<a href="https://openai.github.io/openai-agents-python" target="_blank" rel="noopener noreferrer">`{=html}OpenAI Agents             Agents
-  SDK`</a>`{=html}                                                                                                                     
-
-  `<a href="https://langchain-ai.github.io/langgraph" target="_blank" rel="noopener noreferrer">`{=html}LangGraph`</a>`{=html}         Agent workflows
-
-  `<a href="https://python.langchain.com/docs/introduction" target="_blank" rel="noopener noreferrer">`{=html}LangChain`</a>`{=html}   LLM framework
-
-  `<a href="https://docs.crewai.com" target="_blank" rel="noopener noreferrer">`{=html}CrewAI`</a>`{=html}                             Multi-agent
-
-  `<a href="https://microsoft.github.io/autogen/stable" target="_blank" rel="noopener noreferrer">`{=html}AutoGen`</a>`{=html}         Multi-agent
-
-  `<a href="https://ai.pydantic.dev" target="_blank" rel="noopener noreferrer">`{=html}PydanticAI`</a>`{=html}                         Typed agents
-
-  `<a href="https://learn.microsoft.com/semantic-kernel" target="_blank" rel="noopener noreferrer">`{=html}Semantic                    Microsoft orchestration
-  Kernel`</a>`{=html}                                                                                                                  
-
-  `<a href="https://docs.agno.com" target="_blank" rel="noopener noreferrer">`{=html}Agno`</a>`{=html}                                 Agent framework
-  ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
-# 📚 Databricks
-
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-  Resource                                                                                                                     Purpose
-  ---------------------------------------------------------------------------------------------------------------------------- -----------------------------------
-  `<a href="https://docs.databricks.com" target="_blank" rel="noopener noreferrer">`{=html}Databricks Docs`</a>`{=html}        Documentation
-
-  `<a href="https://academy.databricks.com" target="_blank" rel="noopener noreferrer">`{=html}Databricks Academy`</a>`{=html}  Training
-
-  `<a href="https://www.databricks.com/learn" target="_blank" rel="noopener noreferrer">`{=html}Learning Catalog`</a>`{=html}  Courses
-
-  `<a href="https://www.databricks.com/blog" target="_blank" rel="noopener noreferrer">`{=html}Databricks Blog`</a>`{=html}    News
-
-  `<a href="https://docs.delta.io" target="_blank" rel="noopener noreferrer">`{=html}Delta Lake`</a>`{=html}                   Delta
-
-  `<a href="https://mlflow.org/docs/latest/index.html" target="_blank" rel="noopener noreferrer">`{=html}MLflow`</a>`{=html}   ML lifecycle
-
-  `<a href="https://spark.apache.org/docs/latest" target="_blank" rel="noopener noreferrer">`{=html}Apache Spark`</a>`{=html}  Spark docs
-  ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-------------------------------------------------------------------------
+---
 
 # 🔎 Vector Databases
 
-Pinecone, Qdrant, Weaviate, Milvus, Chroma, LanceDB, FAISS: -
-https://docs.pinecone.io - https://qdrant.tech/documentation -
-https://weaviate.io/developers/weaviate - https://milvus.io/docs -
-https://docs.trychroma.com - https://lancedb.github.io/lancedb/ -
-https://github.com/facebookresearch/faiss
+| Resource | Purpose |
+|----------|---------|
+| <a href="https://docs.pinecone.io" target="_blank" rel="noopener noreferrer">Pinecone Documentation</a> | Managed vector database |
+| <a href="https://qdrant.tech/documentation" target="_blank" rel="noopener noreferrer">Qdrant Documentation</a> | Open-source vector search engine |
+| <a href="https://weaviate.io/developers/weaviate" target="_blank" rel="noopener noreferrer">Weaviate Documentation</a> | AI-native vector database |
+| <a href="https://milvus.io/docs" target="_blank" rel="noopener noreferrer">Milvus Documentation</a> | High-performance vector database |
+| <a href="https://docs.trychroma.com" target="_blank" rel="noopener noreferrer">Chroma Documentation</a> | Lightweight vector database for RAG |
+| <a href="https://lancedb.github.io/lancedb/" target="_blank" rel="noopener noreferrer">LanceDB Documentation</a> | Embedded vector database |
+| <a href="https://github.com/facebookresearch/faiss" target="_blank" rel="noopener noreferrer">FAISS GitHub</a> | Facebook AI Similarity Search |
+| <a href="https://vespa.ai" target="_blank" rel="noopener noreferrer">Vespa</a> | Search engine with vector search |
+| <a href="https://redis.io/docs/latest/develop/interact/search-and-query/vectors/" target="_blank" rel="noopener noreferrer">Redis Vector Search</a> | Vector similarity search with Redis |
+| <a href="https://docs.oracle.com/en/database/oracle/oracle-database/23/vecse/" target="_blank" rel="noopener noreferrer">Oracle AI Vector Search</a> | Oracle Database vector capabilities |
+| <a href="https://learn.microsoft.com/azure/search/vector-search-overview" target="_blank" rel="noopener noreferrer">Azure AI Search - Vector Search</a> | Enterprise vector search |
+| <a href="https://cloud.google.com/vertex-ai/docs/vector-search/overview" target="_blank" rel="noopener noreferrer">Google Vertex AI Vector Search</a> | Managed vector search |
 
-------------------------------------------------------------------------
+---
 
-# 📊 Evaluation
+# 📊 LLM Evaluation & Observability
 
--   LangSmith
--   DeepEval
--   Ragas
--   Arize Phoenix
--   MLflow Evaluation
--   Weights & Biases
+| Resource | Purpose |
+|----------|---------|
+| <a href="https://docs.smith.langchain.com" target="_blank" rel="noopener noreferrer">LangSmith</a> | Agent tracing and debugging |
+| <a href="https://deepeval.com" target="_blank" rel="noopener noreferrer">DeepEval</a> | LLM evaluation framework |
+| <a href="https://docs.ragas.io" target="_blank" rel="noopener noreferrer">Ragas</a> | RAG evaluation metrics |
+| <a href="https://arize.com/docs/phoenix" target="_blank" rel="noopener noreferrer">Arize Phoenix</a> | LLM observability |
+| <a href="https://mlflow.org/docs/latest/llms/index.html" target="_blank" rel="noopener noreferrer">MLflow LLM Evaluation</a> | LLM evaluation and tracking |
+| <a href="https://docs.wandb.ai" target="_blank" rel="noopener noreferrer">Weights & Biases</a> | Experiment tracking |
+| <a href="https://www.trulens.org" target="_blank" rel="noopener noreferrer">TruLens</a> | LLM evaluation and monitoring |
+| <a href="https://promptfoo.dev" target="_blank" rel="noopener noreferrer">Promptfoo</a> | Prompt testing and evaluation |
 
-------------------------------------------------------------------------
+---
 
-# ☁️ Cloud AI
+# ☁️ Cloud AI Platforms
 
--   Azure AI Foundry
--   Google Vertex AI
--   Amazon Bedrock
+| Resource | Purpose |
+|----------|---------|
+| <a href="https://ai.azure.com" target="_blank" rel="noopener noreferrer">Azure AI Foundry</a> | Microsoft AI platform |
+| <a href="https://cloud.google.com/vertex-ai" target="_blank" rel="noopener noreferrer">Google Vertex AI</a> | Google Cloud AI platform |
+| <a href="https://aws.amazon.com/bedrock/" target="_blank" rel="noopener noreferrer">Amazon Bedrock</a> | AWS Foundation Models |
+| <a href="https://docs.aws.amazon.com/sagemaker/" target="_blank" rel="noopener noreferrer">Amazon SageMaker</a> | End-to-end ML platform |
+| <a href="https://www.ibm.com/products/watsonx-ai" target="_blank" rel="noopener noreferrer">IBM watsonx.ai</a> | Enterprise AI platform |
+| <a href="https://cloud.oracle.com/ai" target="_blank" rel="noopener noreferrer">Oracle Cloud AI</a> | Oracle AI services |
 
-------------------------------------------------------------------------
+---
 
-# MCP
+# 🧩 Model Context Protocol (MCP)
 
--   https://modelcontextprotocol.io
--   https://github.com/modelcontextprotocol
+| Resource | Purpose |
+|----------|---------|
+| <a href="https://modelcontextprotocol.io" target="_blank" rel="noopener noreferrer">Model Context Protocol</a> | Official MCP specification |
+| <a href="https://github.com/modelcontextprotocol" target="_blank" rel="noopener noreferrer">MCP GitHub Organization</a> | SDKs and reference implementations |
+| <a href="https://github.com/modelcontextprotocol/servers" target="_blank" rel="noopener noreferrer">MCP Servers</a> | Official MCP server implementations |
+| <a href="https://github.com/modelcontextprotocol/python-sdk" target="_blank" rel="noopener noreferrer">Python SDK</a> | MCP Python SDK |
+| <a href="https://github.com/modelcontextprotocol/typescript-sdk" target="_blank" rel="noopener noreferrer">TypeScript SDK</a> | MCP TypeScript SDK |
 
-------------------------------------------------------------------------
+---
 
-# AI Coding
+# 💻 AI Coding Assistants
 
--   Cursor
--   Windsurf
--   GitHub Copilot
--   Continue.dev
+| Resource | Purpose |
+|----------|---------|
+| <a href="https://www.cursor.com" target="_blank" rel="noopener noreferrer">Cursor</a> | AI-first code editor |
+| <a href="https://windsurf.com" target="_blank" rel="noopener noreferrer">Windsurf</a> | AI IDE |
+| <a href="https://github.com/features/copilot" target="_blank" rel="noopener noreferrer">GitHub Copilot</a> | AI pair programmer |
+| <a href="https://continue.dev" target="_blank" rel="noopener noreferrer">Continue</a> | Open-source AI coding assistant |
+| <a href="https://codeium.com" target="_blank" rel="noopener noreferrer">Codeium</a> | AI coding assistant |
+| <a href="https://cline.bot" target="_blank" rel="noopener noreferrer">Cline</a> | Open-source autonomous coding agent |
+| <a href="https://zed.dev" target="_blank" rel="noopener noreferrer">Zed Editor</a> | High-performance AI editor |
+| <a href="https://replit.com/ai" target="_blank" rel="noopener noreferrer">Replit AI</a> | Cloud AI coding environment |
 
-------------------------------------------------------------------------
+---
 
-# Research
+# 📰 AI Research, Papers & News
 
--   Papers with Code
--   arXiv
--   OpenAI News
--   Anthropic News
--   Google AI Blog
+| Resource | Purpose |
+|----------|---------|
+| <a href="https://paperswithcode.com" target="_blank" rel="noopener noreferrer">Papers with Code</a> | Research papers with implementations |
+| <a href="https://arxiv.org/list/cs.AI/recent" target="_blank" rel="noopener noreferrer">arXiv AI</a> | Latest AI research papers |
+| <a href="https://openai.com/news" target="_blank" rel="noopener noreferrer">OpenAI News</a> | OpenAI announcements |
+| <a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer">Anthropic News</a> | Claude updates |
+| <a href="https://blog.google/technology/ai/" target="_blank" rel="noopener noreferrer">Google AI Blog</a> | Google AI research |
+| <a href="https://ai.meta.com/blog/" target="_blank" rel="noopener noreferrer">Meta AI Blog</a> | Meta AI research |
+| <a href="https://huggingface.co/blog" target="_blank" rel="noopener noreferrer">Hugging Face Blog</a> | Open-source AI updates |
+| <a href="https://www.databricks.com/blog" target="_blank" rel="noopener noreferrer">Databricks Blog</a> | Data & AI engineering |
+| <a href="https://www.microsoft.com/en-us/research/artificial-intelligence/" target="_blank" rel="noopener noreferrer">Microsoft AI Research</a> | Microsoft AI research |
+| <a href="https://deepmind.google/discover/blog/" target="_blank" rel="noopener noreferrer">Google DeepMind Blog</a> | DeepMind research and breakthroughs |
+
+---
