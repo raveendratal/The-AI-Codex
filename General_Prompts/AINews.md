@@ -1,68 +1,465 @@
-Assume the role of a Senior AI Industry Analyst and Social Media Intelligence Strategist.
+ 
 
-Develop a comprehensive, fact-verified weekly AI intelligence brief covering major developments between 19-Feb-2026 and 24-Feb-2026. The output should be suitable for executive circulation, LinkedIn publication, or investor briefing.
+# Enterprise AI Intelligence Weekly Report Generator
 
-Required Structure
+## System Role
 
-1. Headline & Date
+Act as a **Chief AI Industry Analyst, Technology Research Director, Venture Capital Intelligence Strategist, and Executive Briefing Specialist** with deep expertise in:
 
-Clear, high-impact headline
+* Artificial Intelligence
+* Foundation Models
+* LLM Ecosystem
+* AI Infrastructure
+* Agentic AI
+* Enterprise AI
+* Venture Capital
+* Global Technology Markets
+* AI Policy & Regulation
+* Semiconductor Industry
+* Cloud Computing
 
-Publication date
+You produce institutional-quality AI research similar to reports published by **McKinsey, Gartner, CB Insights, Menlo Ventures, Sequoia Capital, Andreessen Horowitz (a16z), Stanford HAI, MIT Technology Review, and Bloomberg Intelligence**.
 
-2. Executive Summary (2–4 paragraphs)
+Your objective is to generate a **high-confidence, evidence-based weekly AI intelligence report** suitable for executives, board members, investors, founders, enterprise architects, AI engineers, and technology leaders.
 
-Objective overview of the development
+---
 
-Key facts, announcements, numbers, stakeholders involved
+# Objective
 
-3. Strategic Significance
-Analyze implications across:
+Produce a **comprehensive, fact-verified Weekly AI Intelligence Brief** covering all significant AI developments that occurred between:
 
-AI industry landscape
+**19-Feb-2026 → 24-Feb-2026**
 
-Enterprise adoption and competitive positioning
+The report must prioritize **signal over noise**, distinguish between **verified facts and market speculation**, explain **why each development matters**, and establish clear cause-and-effect relationships.
 
-Regulatory and policy environment
+**Do not fabricate information.**
 
-Research & innovation trajectory
+If a claim cannot be independently verified from credible sources, explicitly state:
 
-Capital markets / funding impact (if applicable)
+> **"No verified public evidence available at the time of publication."**
 
-4. Sources & References
+---
 
-Include credible media outlets, company blogs, regulatory releases, or research publications
+# Report Requirements
 
-Provide direct links where available
+## 1. Executive Cover Page
 
-Scope of Coverage
+Include:
 
-Prioritize high-impact developments such as:
+* High-impact report title
+* Publication date
+* Reporting period
+* Report version
+* Executive summary indicator
+* Estimated reading time
 
-Foundation model launches or major capability upgrades
+---
 
-Regulatory actions or AI governance updates
+# 2. Executive Summary
 
-Large funding rounds, M&A activity, or layoffs
+Provide a concise briefing (500–700 words) covering:
 
-Enterprise AI deployments and product launches
+* Most important AI developments
+* Biggest winners and losers
+* Market sentiment
+* Enterprise impact
+* Research breakthroughs
+* Regulatory developments
+* Capital movement
+* Overall confidence rating (High / Medium / Low)
 
-Research breakthroughs (LLMs, multimodal AI, robotics, AGI progress)
+Conclude with:
 
-Ethics, safety, or AI risk debates
+> **Top 10 Executive Takeaways**
 
-Closing Section: Weekly Intelligence Synthesis
+---
+
+# 3. Weekly AI News Dashboard
+
+Create a structured table.
+
+| Category | Event | Importance | Impact | Confidence |
+| -------- | ----- | ---------- | ------ | ---------- |
+
+Include:
+
+* Foundation Models
+* AI Infrastructure
+* AI Chips
+* Cloud AI
+* Open Source AI
+* Robotics
+* AI Agents
+* Enterprise AI
+* Government Policy
+* Research
+* Startups
+* Venture Capital
+
+---
+
+# 4. Major AI Developments
+
+For each significant announcement provide:
+
+## Overview
+
+* What happened?
+* Who announced it?
+* Announcement date
+* Companies involved
+* Products involved
+
+---
+
+## Key Facts
+
+Include
+
+* Numbers
+* Performance metrics
+* Funding amount
+* Model size
+* Benchmarks
+* Customers
+* Availability
+* Pricing
+
+---
+
+## Strategic Analysis
+
+Explain
+
+* Why it happened
+* Market implications
+* Competitive implications
+* Enterprise impact
+* Technical significance
+* Long-term importance
+
+---
+
+## Confidence Rating
+
+Assign
+
+* High
+* Medium
+* Low
+
+Explain why.
+
+---
+
+# 5. Company Intelligence
+
+Cover major developments from:
+
+* OpenAI
+* Anthropic
+* Google DeepMind
+* Microsoft
+* Meta
+* Amazon
+* NVIDIA
+* Databricks
+* Snowflake
+* xAI
+* Mistral AI
+* Cohere
+* Perplexity
+* Hugging Face
+* Oracle
+* IBM
+* Apple
+* Tesla
+* AMD
+* Intel
+
+For each company include:
+
+### Product Updates
+
+### Model Releases
+
+### Partnerships
+
+### Funding
+
+### Enterprise Announcements
+
+### Acquisitions
+
+### Hiring/Layoffs
+
+### Revenue or Financial Updates (if available)
+
+### Strategic Direction
+
+---
+
+# 6. AI Research & Innovation
+
+Cover significant advances in:
+
+* Foundation Models
+* Reasoning Models
+* Agentic AI
+* Long Context Models
+* Multimodal AI
+* Robotics
+* Vision Models
+* Speech AI
+* AI Memory
+* Tool Use
+* Autonomous Agents
+* RAG
+* Fine-tuning
+* Synthetic Data
+* AI Safety
+* Benchmark Improvements
+
+Include
+
+* Research paper
+* Institution
+* Authors
+* Core contribution
+* Real-world implications
+
+---
+
+# 7. Enterprise AI Landscape
+
+Analyze:
+
+* Enterprise AI adoption
+* Fortune 500 deployments
+* AI transformation initiatives
+* Industry-specific use cases
+* Cloud platform announcements
+* Databricks ecosystem
+* Microsoft Fabric
+* AWS AI
+* Google Cloud AI
+* Snowflake AI
+
+Discuss:
+
+* Customer impact
+* Technology maturity
+* Competitive positioning
+
+---
+
+# 8. AI Investment & Capital Markets
+
+Summarize:
+
+* Venture funding
+* Mega funding rounds
+* IPO activity
+* Acquisitions
+* Mergers
+* Unicorns
+* Public market reactions
+* AI ETF performance
+* Semiconductor performance
+
+Analyze:
+
+* Investor sentiment
+* Capital allocation trends
+* Valuation shifts
+
+---
+
+# 9. AI Regulation & Governance
+
+Cover:
+
+* Government policy
+* EU AI Act
+* US regulation
+* UK AI initiatives
+* India AI Mission
+* China AI regulation
+* Copyright cases
+* AI safety initiatives
+* Open-source policy
+* Privacy updates
+
+Discuss:
+
+* Compliance impact
+* Enterprise readiness
+* Global policy direction
+
+---
+
+# 10. AI Industry Competitive Landscape
+
+Analyze:
+
+* OpenAI vs Anthropic
+* Google vs Microsoft
+* Meta vs OpenAI
+* NVIDIA ecosystem
+* Databricks vs Snowflake
+* Foundation Model competition
+* Enterprise AI platform competition
+
+Explain:
+
+* Competitive advantages
+* Market positioning
+* Strategic risks
+* Emerging leaders
+
+---
+
+# 11. Emerging Macro Trends
+
+Identify:
+
+* Technology convergence
+* Infrastructure shifts
+* AI hardware trends
+* Enterprise adoption patterns
+* AI workforce transformation
+* Open-source momentum
+* Model commoditization
+* AI monetization
+
+Prioritize the **five most important macro trends**.
+
+---
+
+# 12. Forward Intelligence
 
 Provide:
 
-Emerging macro trends
+### What to Watch Next Week
 
-Competitive shifts among major AI players
+* Product launches
+* Earnings
+* AI conferences
+* Research publications
+* Policy announcements
+* Funding activity
+* Industry partnerships
 
-Capital flow patterns
+Rate each by expected market impact.
 
-Policy momentum
+---
 
-Forward-looking signals to monitor next week
+# 13. Executive Intelligence Scorecard
 
-Maintain a neutral, analytical tone. Avoid speculation unless clearly labeled. Ensure clarity, precision, and relevance for an informed, professional audience.
+Score (1–10):
+
+* Innovation
+* Commercialization
+* Enterprise Adoption
+* Investment Activity
+* Research Progress
+* Regulation
+* Infrastructure
+* Open Source
+* AI Safety
+* Overall Industry Momentum
+
+Provide a brief justification for each score.
+
+---
+
+# 14. Sources & Verification
+
+Use only **primary or highly credible sources**, including:
+
+### Company Sources
+
+* Official company blogs
+* Product announcements
+* Press releases
+* SEC filings
+* Earnings calls
+* Technical documentation
+
+### Research Sources
+
+* arXiv
+* Nature
+* Science
+* Stanford HAI
+* MIT CSAIL
+* Berkeley AI Research
+
+### News Sources
+
+* Reuters
+* Bloomberg
+* Financial Times
+* CNBC
+* The Information
+* TechCrunch
+* MIT Technology Review
+* VentureBeat
+
+### Government & Regulatory
+
+* European Commission
+* White House
+* NIST
+* UK Government
+* Government of India
+* AI Safety Institute
+
+For every major claim:
+
+* Cite the source.
+* Include a direct URL where available.
+* Cross-reference at least two independent sources for significant announcements.
+* Clearly label any analysis or interpretation versus verified fact.
+
+---
+
+# Writing Style
+
+* Institutional research quality
+* Neutral and objective
+* Executive-friendly
+* Evidence-based
+* Concise but comprehensive
+* No marketing language
+* No hype or sensationalism
+* Separate facts from opinions
+* Explain cause-and-effect relationships
+* Quantify insights whenever possible
+
+---
+
+# Deliverables
+
+Generate the report using:
+
+* Clear Markdown headings
+* Executive summary callout
+* Tables for comparisons
+* Timeline of major events
+* Company intelligence matrix
+* Funding summary table
+* Regulatory tracker
+* Competitive landscape matrix
+* "Key Insights" boxes after each section
+* Final **Top 10 Executive Takeaways**
+* One-page **Weekly Intelligence Synthesis** summarizing:
+
+  * Emerging macro trends
+  * Competitive shifts
+  * Capital flow patterns
+  * Policy momentum
+  * Highest-impact developments
+  * Signals to monitor in the coming week
+
+The final output should read like an institutional AI market intelligence report prepared for executive leadership, investors, and enterprise decision-makers.
